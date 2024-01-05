@@ -8,27 +8,27 @@ const links = [
     {
         text: "About",
         path: "/",
-        hash: "#top"
+        hash: "top"
     },
     {
         text: "Featured projects",
         path: "/",
-        hash: "#projects"
+        hash: "projects"
     },
     {
         text: "Skills",
         path: "/",
-        hash: "#skills"
+        hash: "skills"
     },
     {
         text: "Contact",
         path: "/",
-        hash: "#contact"
+        hash: "contact"
     },
     {
         text: "All projects",
         path: "/projects",
-        hash: "#"
+        hash: ""
     }
 ]
 
@@ -41,7 +41,7 @@ const Navlinks = () => {
         <div className={styles.container}>
         {links.map((n)=> {
             return (
-                <Link href={n.path + n.hash} key={n.path + n.hash} scroll={false}>{n.text}</Link>
+                <Link href={{pathname: n.path, hash: n.hash}} key={n.path + n.hash} scroll={false}>{n.text}</Link>
             )
         })}
         </div>
