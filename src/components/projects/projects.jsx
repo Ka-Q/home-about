@@ -37,7 +37,7 @@ const Projects = () => {
         <div className={styles.container}>
             {projects.map((n) => {
                 return (
-                    <ProjectCard project={n}/>
+                    <ProjectCard project={n} key={n.name}/>
                 )
             })}
         </div>
