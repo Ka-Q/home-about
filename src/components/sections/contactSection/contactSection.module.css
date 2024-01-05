@@ -1,0 +1,155 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    gap: 3rem;
+    background-color: var(--bg-color-dark);
+    overflow: hidden;
+}
+
+.animation_container {
+    position: relative;
+    width: 50%;
+    min-height: 15rem;
+}
+
+.form_container {
+    width: 100%;
+    max-width: 40rem;
+    padding: 1rem;
+    z-index: 1;
+    text-align: center;
+    margin: auto;
+}
+
+.form_container a {
+    color: var(--font-color-light-soft);
+}
+
+.form {
+    justify-items: center;
+    width: 100%;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.plane {
+    position: absolute;
+    animation: contact-animation 15s forwards ease-in-out infinite;
+    z-index: 1;
+    filter: drop-shadow(0px 0px 3px var(--font-color-light-soft));
+}
+
+.icon1 {
+    position: absolute;
+    transform: rotate(-35deg) translate(0%, 50%);
+}
+
+.icon2 {
+    position: absolute;
+    transform: rotate(10deg) scale(2);
+    top: 25%;
+    left: 45%;
+}
+
+.icon3 {
+    position: absolute;
+    transform: rotate(-15deg) scale(1.5);
+    left: 15%;
+    top: 70%;
+}
+
+.icon4 {
+    position: absolute;
+    transform: rotate(5deg) scale(1.8);
+    left: 70%;
+    top: 50%;
+}
+
+.icon5 {
+    position: absolute;
+    transform: rotate(30deg) scale(.8);
+    left: 86%;
+    top: 10%;
+}
+
+.icon6 {
+    position: absolute;
+    transform: rotate(-15deg) scale(1.2);
+    left: 90%;
+    top: 80%;
+}
+
+.icon1, .icon2, .icon3, .icon4, .icon5, .icon6 {
+    filter: invert(0.3) opacity(.5);
+}
+
+@keyframes contact-animation {
+    0% {
+        left: -120%;
+        top: 50%;
+        transform: rotate(45deg) translate(0, -50%);
+    }
+    20% {
+        left: 33%;
+        top: 50%;
+        transform: rotate(0deg) translate(0, -50%);
+    }
+    25% {
+        left: 32%;
+        top: 49%;
+    }
+    30% {
+        left: 34%;
+        top: 51%;
+    }
+    35% {
+        left: 33%;
+        top: 50%;
+    }
+    40% {
+        left: 32%;
+        top: 49%;
+    }
+    45% {
+        left: 34%;
+        top: 51%;
+    }
+    50% {
+        left: 33%;
+        top: 50%;
+    }
+    55% {
+        left: 32%;
+        top: 49%;
+    }
+    60% {
+        left: 34%;
+        top: 51%;
+    }
+    65% {
+        left: 33%;
+        top: 50%;
+    }
+    70% {
+        left: 32%;
+        top: 49%;
+        transform: rotate(0deg) translate(0, -50%);
+    }
+
+    100% {
+        left: 220%;
+        top: -200%;
+        transform: rotate(-45deg) translate(0%, -50%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .animation_container {
+        width: 100%;
+    }
+}

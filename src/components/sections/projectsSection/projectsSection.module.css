@@ -1,0 +1,37 @@
+.projects_container {
+    margin: auto;
+    background: var(--bg-color-mid);
+    padding: 1rem;
+}
+
+.projects_title,
+.projects_desc {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.more_projects_container {
+    display: flex;
+    padding: 1rem;
+}
+
+.more_projects {
+    margin-inline-start: auto;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.more_projects:hover {
+    animation: bounce .5s alternate none infinite;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-3%);
+    }
+}

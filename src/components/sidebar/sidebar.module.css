@@ -1,0 +1,48 @@
+.container {
+    display: block;
+    background: inherit;
+}
+
+.sidebar {
+    position: relative;
+    background: inherit;
+}
+
+.toggle {
+    position: absolute;
+    margin-top: .3rem;
+    top: 0;
+    right: 0;
+    transform: translate(0%, -10%);
+    font-size: 2.5rem;
+    padding: 1rem;
+    padding-top: .1rem;
+    padding-bottom: .1rem;
+    cursor: pointer;
+    user-select: none;
+    z-index: 2;
+}
+.toggle:hover {
+    color: var(--bg-color-dark);
+    background: var(--font-color-light);
+    border-radius: .2rem;
+}
+
+.sidebar > div{
+    background: inherit;
+    position: absolute;
+    right: 0;
+    top: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    z-index: 1;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        display: none;
+    }
+}

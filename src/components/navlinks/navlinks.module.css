@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.container > a {
+    color: var(--font-color-light-soft);
+    padding: 1rem;
+}
+
+.container > a:hover {
+    color: var(--bg-color-dark);
+    background: var(--font-color-light-soft);
+    border-radius: .2rem;
+}
