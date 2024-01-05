@@ -4,19 +4,23 @@ import styles from "./navlinks.module.css"
 const links = [
     {
         text: "About",
-        path: "/#top"
+        path: "/",
+        hash: "top"
     },
     {
         text: "Featured projects",
-        path: "/#projects"
+        path: "/",
+        hash: "projects"
     },
     {
         text: "Skills",
-        path: "/#skills"
+        path: "/",
+        hash: "skills"
     },
     {
         text: "Contact",
-        path: "/#contact"
+        path: "/",
+        hash: "contact"
     },
     {
         text: "All projects",
@@ -29,7 +33,7 @@ const Navlinks = () => {
         <div className={styles.container}>
         {links.map((n)=> {
             return (
-                <Link href={n.path} key={n.path}>{n.text}</Link>
+                <Link href={{pathname: n.path, hash: n.hash}} key={n.path}>{n.text}</Link>
             )
         })}
         </div>
