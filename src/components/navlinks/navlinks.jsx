@@ -41,7 +41,7 @@ const Navlinks = () => {
         <div className={styles.container}>
         {links.map((n)=> {
             return (
-                <Link href={{pathname: n.path, hash: n.hash}} key={n.path + n.hash} scroll={false}>{n.text}</Link>
+                <Link href={n.path} key={n.path + n.hash} scroll={false}>{n.text}</Link>
             )
         })}
         </div>
