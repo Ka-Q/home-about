@@ -1,0 +1,25 @@
+.container {
+    display: grid;
+    grid-template-areas: "area1 area2 area3";
+    background: var(--bg-color-dark-soft);
+    padding: 2rem
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-areas: "area";
+    }
+}
+
+.footer_column {
+    text-align: center;
+    color: var(--font-color-light-soft)
+}
+
+.footer_column > ul {
+    margin-top: 1rem;
+}
+
+.footer_column li {
+    list-style: none;
+}

@@ -1,0 +1,16 @@
+.technologies {
+    min-height: 8rem;
+}
+
+.container {
+    position: relative;
+    margin: 2rem;
+    height: 4rem;
+    min-height: 4rem;
+    aspect-ratio: 1;
+    filter: saturate(0.1) brightness(1);
+}
+
+.inverted {
+    filter: invert(1);
+}

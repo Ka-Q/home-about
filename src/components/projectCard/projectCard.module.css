@@ -1,0 +1,87 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+    padding: 0;
+    background: var(--bg-color-darker);
+    border-radius: .5rem;
+    border: 1px solid var(--bg-color-mid-soft)
+}
+
+.container:hover {
+    animation: hoverAnimation .2s linear 0s;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+    filter: grayscale(1);
+
+    .hover_image {
+        display: flex;
+    }
+}
+
+@keyframes hoverAnimation {
+    from {
+        transform: scale(1)
+      }
+    
+      to {
+        transform: scale(.98)
+      }
+}
+
+.image_container {
+    border-radius: .5rem .5rem 0rem 0rem;
+    position: relative;
+    width: 100%;
+    height: 15em;
+    overflow: hidden;
+}
+
+.hover_image {
+    display: none;
+    position: relative;
+    height: inherit;
+    z-index: 100;
+    color: rgba(0,0,0,.8);
+    background: rgba(0,0,0,.3);;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10rem;
+}
+
+.hover_image > span {
+    display: block;
+    margin: auto;
+}
+
+.image {
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.content {
+    margin: .5rem;
+}
+
+.title {
+    text-align: center;
+}
+
+.desc {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tag_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag {
+    color: var(--font-color-light-soft);
+    margin: .25rem;
+    padding: .2rem .3rem .2rem .3rem;
+    background: rgba(0,0,0,.2);
+    border: 2px solid var(--font-color-light-soft);
+    border-radius: .5rem;
+}

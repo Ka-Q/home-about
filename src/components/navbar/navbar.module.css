@@ -1,0 +1,26 @@
+.container {
+    background: var(--bg-color-dark);
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 2;
+    filter: drop-shadow(0px 0px 10px black);
+}
+
+.brand {
+    display: block;
+    padding: 1rem;
+}
+
+.large_screen {
+    padding-right: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .large_screen {
+        display: none;
+    }
+}
+
