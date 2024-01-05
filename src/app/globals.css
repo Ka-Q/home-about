@@ -37,6 +37,8 @@ body {
 
 html {
   background-color: rgb(9, 7, 15);
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
 }
 
 a {
