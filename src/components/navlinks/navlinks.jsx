@@ -7,27 +7,27 @@ import { usePathname } from "next/navigation"
 const links = [
     {
         text: "About",
-        path: "/",
+        path: "",
         hash: "top"
     },
     {
         text: "Featured projects",
-        path: "/",
+        path: "",
         hash: "projects"
     },
     {
         text: "Skills",
-        path: "/",
+        path: "",
         hash: "skills"
     },
     {
         text: "Contact",
-        path: "/",
+        path: "",
         hash: "contact"
     },
     {
         text: "All projects",
-        path: "/projects",
+        path: "projects",
         hash: ""
     }
 ]
