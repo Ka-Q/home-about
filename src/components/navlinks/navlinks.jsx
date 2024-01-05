@@ -1,39 +1,50 @@
+"use client"
+
 import Link from "next/link"
 import styles from "./navlinks.module.css"
+import { usePathname } from "next/navigation"
 
 const links = [
     {
         text: "About",
-        path: "/#top",
-        hash: "top"
+        path: "/",
+        hash: "#top"
     },
     {
         text: "Featured projects",
-        path: "/#projects",
-        hash: "projects"
+        path: "/",
+        hash: "#projects"
     },
     {
         text: "Skills",
-        path: "/#skills",
-        hash: "skills"
+        path: "/",
+        hash: "#skills"
     },
     {
         text: "Contact",
-        path: "/#contact",
-        hash: "contact"
+        path: "/",
+        hash: "#contact"
     },
     {
         text: "All projects",
-        path: "projects"
+        path: "/projects",
+        hash: "#"
     }
 ]
 
 const Navlinks = () => {
+
+    let path = usePathname();
+    console.log(path);
+
     return (
         <div className={styles.container}>
         {links.map((n)=> {
             return (
-                <a href={n.path} key={n.path}>{n.text}</a>
+                path == n.path ?
+                    <a href={n.path + n.hash} key={n.path + n.hash}>{n.text}</a>
+                :
+                    <Link href={n.path + n.hash} key={n.path + n.hash}>{n.text}</Link>
             )
         })}
         </div>
