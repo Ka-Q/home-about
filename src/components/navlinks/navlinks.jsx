@@ -1,5 +1,3 @@
-"use client"
-
 import Link from "next/link"
 import styles from "./navlinks.module.css"
 import { usePathname } from "next/navigation"
@@ -33,9 +31,6 @@ const links = [
 ]
 
 const Navlinks = () => {
-
-    let path = usePathname();
-    console.log(path);
 
     return (
         <div className={styles.container}>
