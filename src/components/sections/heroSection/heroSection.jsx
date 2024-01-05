@@ -16,7 +16,7 @@ const HeroSection = () => {
                 </p>
                 <br/>
                 <p>
-                    I'm currently studying computer science at the University of Eastern Finland and looking for commissions. Examples of my past projects and technical skills can be found just below.
+                    I&apos;m currently studying computer science at the University of Eastern Finland and looking for commissions. Examples of my past projects and technical skills can be found just below.
                 </p>
                 <br/>
                 <p>
