@@ -8,69 +8,51 @@ const ContactForm = () => {
     //const [counter, setCounter] = useState(0); 
     const [name, setName] = useState(""); 
     const [disabled, setDisabled] = useState(false); 
-    const [captchaValue, setCaptchaValue] = useState(""); 
+    const [captchaValue, setCaptchaValue] = useState(null); 
 
     const onHCaptchaChange = (token) => {
-        console.log(token);
         setCaptchaValue(token);
     };
 
-    const handleSubmit = (e) => {
+    async function handleSubmit(e) {
         e.preventDefault();
 
-        let form = e.target;
-
-        const hCaptcha = form.querySelector('textarea[name=h-captcha-response]');
-        if (!hCaptcha.value) {
+        if (!captchaValue) {
             alert("Please fill out the captcha field before submitting.");
             return
         }
 
-        const result = document.getElementById('result');
-        result.style.display = "flex";
-
+        let form = e.target;
         const formData = new FormData(form);
         formData.append("h-captcha-response", captchaValue);
-
         const object = Object.fromEntries(formData);
+        delete object["g-recaptcha-response"];              //Automatically there
+        const jsonObject = JSON.stringify(object);
 
-        console.log("FORM DATA: ");
-        console.log(object);
+        const resultElement = document.getElementById('result');
+        resultElement.style.display = "flex";
+        resultElement.innerHTML = "<div>Please wait...</div>";
 
-        const json = JSON.stringify(object);
-        result.innerHTML = "<div>Please wait...</div>"
-
-        fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                "Content-Type": "application/json",
+                Accept: "application/json",
             },
-            body: json
-        })
-        .then(async (response) => {
-            if (response.status == 200) {
-                result.innerHTML = "<div>Message sent successfully! I will get back to you soon!</div>";
-                setDisabled(true);
-            } else {
-                result.innerHTML = "<div>Something went wrong!</div>";
-                console.log(json);
-                setTimeout(() => {
-                    result.style.display = "none";
-                }, 5000);
-            }
-        })
-        .catch(error => {
-            result.innerHTML = "<div>Something went wrong ERROR!</div>";
-            console.log(error);
-            setTimeout(() => {
-                result.style.display = "none";
-            }, 5000);
-        })
-        .then(function () {
-            form.reset();
+            body: jsonObject,
         });
-    }       
+        const result = await response.json();
+        if (result.success) {
+            resultElement.innerHTML = "<div>Message sent successfully! I will get back to you soon!</div>";
+            setDisabled(true);
+        } else {
+            resultElement.innerHTML = "<div>Something went wrong!</div>";
+            console.log(json);
+            setTimeout(() => {
+                resultElement.style.display = "none";
+            }, 5000);
+        }
+    }
 
     return (
         <>
@@ -120,7 +102,7 @@ const ContactForm = () => {
                 <div className={styles.h_captcha}>
                     <div>
                         <div className={styles.h_captcha_border}></div>
-                        <HCaptcha sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" onVerify={onHCaptchaChange} theme="dark" />
+                        <HCaptcha sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" onVerify={(e) => onHCaptchaChange(e)} theme="dark" />
                     </div>
                 </div>
                 <button type="submit" id="submit" className={styles.button} disabled={disabled}>Send</button>
