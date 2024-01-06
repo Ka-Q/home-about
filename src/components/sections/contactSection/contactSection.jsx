@@ -1,6 +1,10 @@
+import dynamic from "next/dynamic";
+
 import ContactForm from "@/components/contactForm/contactForm";
 import styles from "./contactSection.module.css"
 import Image from "next/image";
+
+const ContactForm2 = dynamic(() => import('@/components/contactForm/contactForm'), { ssr: false })
 
 const ContactSection = () => {
     return (
@@ -15,7 +19,7 @@ const ContactSection = () => {
                     Have an offer, or just want to chat? You can email me directly at <a href="mailto:contact.akulaurila.com">contact@akulaurila.com</a> or leave a message using this form.
                 </p>
                 <div className={styles.form}>
-                    <ContactForm />
+                    <ContactForm2 />
                 </div>
             </div>
             <Image src="/mail_icon.svg" alt="mail icon" width={50} height={50} className={styles.icon1}/>
