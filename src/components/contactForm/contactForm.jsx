@@ -5,11 +5,13 @@ import styles from "./contactForm.module.css"
 const ContactForm = () => {
 
     const [name, setName] = useState(""); 
+    const [disabled, setDisabled] = useState(false); 
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let form = e.target;
 
+        let form = e.target;
+        
         const hCaptcha = form.querySelector('textarea[name=h-captcha-response]');
         if (!hCaptcha.value) {
             alert("Please fill out the captcha field before submitting.");
@@ -36,6 +38,7 @@ const ContactForm = () => {
                 let json = await response.json();
                 if (response.status == 200) {
                     result.innerHTML = "<div>Message sent successfully! I will get back to you soon!</div>";
+                    setDisabled(true);
                 } else {
                     console.log(response);
                     result.innerHTML = "<div>Something went wrong!</div>";
@@ -68,6 +71,7 @@ const ContactForm = () => {
                     placeholder="example@example.com" 
                     className={styles.input} 
                     required
+                    disabled={disabled}
                 />
                 <label htmlFor="name-input" className={styles.label}>name</label>
                 <input 
@@ -79,6 +83,7 @@ const ContactForm = () => {
                     required
                     minLength={1}
                     onChange={(e) => setName(e.target.value)}
+                    disabled={disabled}
                 />
                 <label htmlFor="message-input" className={styles.label}>message</label>
                 <textarea 
@@ -88,6 +93,7 @@ const ContactForm = () => {
                     className={styles.input} 
                     required
                     minLength={10}
+                    disabled={disabled}
                 />
                 <div id="result" className={styles.result}></div>
             </div>
@@ -98,7 +104,7 @@ const ContactForm = () => {
                     <div className={styles.h_captcha_border}></div>
                 </div>
             </div>
-                <button type="submit" className={styles.button}>Send</button>
+                <button type="submit" id="submit" className={styles.button} disabled={disabled}>Send</button>
             </div>
         </form>
         <div>
