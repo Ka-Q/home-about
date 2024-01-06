@@ -11,7 +11,7 @@ const ContactForm = () => {
         e.preventDefault();
 
         let form = e.target;
-        
+
         const hCaptcha = form.querySelector('textarea[name=h-captcha-response]');
         if (!hCaptcha.value) {
             alert("Please fill out the captcha field before submitting.");
@@ -20,38 +20,40 @@ const ContactForm = () => {
 
         const result = document.getElementById('result');
         result.style.display = "flex";
-  
+
         const formData = new FormData(form);
         const object = Object.fromEntries(formData);
         const json = JSON.stringify(object);
-        result.innerHTML = "Please wait..."
+        result.innerHTML = "<div>Please wait...</div>"
 
         fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: json
-            })
-            .then(async (response) => {
-                let json = await response.json();
-                if (response.status == 200) {
-                    result.innerHTML = "<div>Message sent successfully! I will get back to you soon!</div>";
-                    setDisabled(true);
-                } else {
-                    console.log(response);
-                    result.innerHTML = "<div>Something went wrong!</div>";
-                }
-            })
-            .catch(error => {
-                console.log(error);
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            if (response.status == 200) {
+                result.innerHTML = "<div>Message sent successfully! I will get back to you soon!</div>";
+                setDisabled(true);
+            } else {
                 result.innerHTML = "<div>Something went wrong!</div>";
-            })
-            .then(function() {
-                form.reset();
-            });
-
+                setTimeout(() => {
+                    result.style.display = "none";
+                }, 5000);
+            }
+        })
+        .catch(error => {
+            result.innerHTML = "<div>Something went wrong!</div>";
+            setTimeout(() => {
+                result.style.display = "none";
+            }, 5000);
+        })
+        .then(function () {
+            form.reset();
+        });
     }       
 
     return (
@@ -97,7 +99,7 @@ const ContactForm = () => {
                 />
                 <div id="result" className={styles.result}></div>
             </div>
-            <span className={styles.disclaimer}>Your information will never be shared publicly. For more information, you can check the <a href="https://www.netlify.com/platform/core/forms/" target="_blank">documentation for Web3forms.</a></span> 
+            <span className={styles.disclaimer}>Your information will never be shared publicly. For more information, you can check the <a href="https://web3forms.com/" target="_blank">documentation for Web3forms.</a></span> 
             <div className={styles.button_container}>
                 <div className={styles.h_captcha}>
                 <div className="h-captcha" data-captcha="true" data-theme="dark" >
