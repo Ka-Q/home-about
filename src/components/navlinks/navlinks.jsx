@@ -5,28 +5,23 @@ import { usePathname } from "next/navigation"
 const links = [
     {
         text: "About",
-        path: "/",
-        hash: "top"
+        path: "/#top"
     },
     {
         text: "Featured projects",
-        path: "/",
-        hash: "projects"
+        path: "/#projects"
     },
     {
         text: "Skills",
-        path: "/",
-        hash: "skills"
+        path: "/#skills"
     },
     {
         text: "Contact",
-        path: "/",
-        hash: "contact"
+        path: "/#contact"
     },
     {
         text: "All projects",
-        path: "projects",
-        hash: ""
+        path: "projects"
     }
 ]
 
@@ -36,7 +31,7 @@ const Navlinks = () => {
         <div className={styles.container}>
         {links.map((n)=> {
             return (
-                <Link href={n.path} key={n.path + n.hash} scroll={false}>{n.text}</Link>
+                <Link href={n.path} key={n.path + n.hash}>{n.text}</Link>
             )
         })}
         </div>
