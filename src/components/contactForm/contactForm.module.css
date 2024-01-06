@@ -57,10 +57,6 @@
     font-family: inherit;
 }
 
-.h_captcha {
-    margin: auto;
-}
-
 .h_captcha > div {
     position: relative;
     margin-inline-start: auto;

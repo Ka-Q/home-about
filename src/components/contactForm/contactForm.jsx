@@ -1,11 +1,19 @@
 "use client"
 import { useState } from "react"
 import styles from "./contactForm.module.css"
+import HCaptcha from "@hcaptcha/react-hcaptcha"
 
 const ContactForm = () => {
 
+    //const [counter, setCounter] = useState(0); 
     const [name, setName] = useState(""); 
     const [disabled, setDisabled] = useState(false); 
+    const [captchaValue, setCaptchaValue] = useState(""); 
+
+    const onHCaptchaChange = (token) => {
+        console.log(token);
+        setCaptchaValue(token);
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,7 +30,13 @@ const ContactForm = () => {
         result.style.display = "flex";
 
         const formData = new FormData(form);
+        formData.append("h-captcha-response", captchaValue);
+
         const object = Object.fromEntries(formData);
+
+        console.log("FORM DATA: ");
+        console.log(object);
+
         const json = JSON.stringify(object);
         result.innerHTML = "<div>Please wait...</div>"
 
@@ -40,13 +54,15 @@ const ContactForm = () => {
                 setDisabled(true);
             } else {
                 result.innerHTML = "<div>Something went wrong!</div>";
+                console.log(json);
                 setTimeout(() => {
                     result.style.display = "none";
                 }, 5000);
             }
         })
         .catch(error => {
-            result.innerHTML = "<div>Something went wrong!</div>";
+            result.innerHTML = "<div>Something went wrong ERROR!</div>";
+            console.log(error);
             setTimeout(() => {
                 result.style.display = "none";
             }, 5000);
@@ -102,16 +118,14 @@ const ContactForm = () => {
             <span className={styles.disclaimer}>Your information will never be shared publicly. For more information, you can check the <a href="https://web3forms.com/" target="_blank">documentation for Web3forms.</a></span> 
             <div className={styles.button_container}>
                 <div className={styles.h_captcha}>
-                <div className="h-captcha" data-captcha="true" data-theme="dark" >
-                    <div className={styles.h_captcha_border}></div>
+                    <div>
+                        <div className={styles.h_captcha_border}></div>
+                        <HCaptcha sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" onVerify={onHCaptchaChange} theme="dark" />
+                    </div>
                 </div>
-            </div>
                 <button type="submit" id="submit" className={styles.button} disabled={disabled}>Send</button>
             </div>
         </form>
-        <div>
-            <script src="https://web3forms.com/client/script.js" async defer></script>
-        </div>
         </>
     )
 }
