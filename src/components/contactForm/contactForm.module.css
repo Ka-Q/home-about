@@ -54,11 +54,39 @@
 .input::placeholder {
     color: var(--font-color-light-soft);
     font-family: inherit;
-  }
+}
+
+.h_captcha {
+    margin: auto;
+}
+
+.h_captcha > div {
+    position: relative;
+    margin-inline-start: auto;
+}
+
+.h_captcha iframe {
+    filter: contrast(1.4) hue-rotate(73deg);
+}
+
+.h_captcha_border{
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    border: 6px solid var(--bg-color-mid) !important;
+    border-radius: 4px;
+    width: 306px;
+    height: 80px;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+}
 
 .button_container {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-items: center;
 }
 
 @media screen and (max-width: 600px) {
@@ -72,7 +100,7 @@
     display: block;
     color: var(--font-color-light-soft);
     font-size: .8rem;
-    margin-right: 1rem;
+    margin-bottom: 2rem;
 }
 
 .disclaimer > a {
@@ -81,15 +109,15 @@
 
 .button {
     font-size: 1rem;
-    padding: 1.15rem;
     min-width: 10rem;
-    max-height: 3.5rem;
+    min-height: 4rem;
+    max-height: 4rem;
     border-radius: 2rem;
-    border: 2px solid var(--bg-color-mid-soft);
+    border: 3px solid var(--bg-color-mid-soft);
     background-color: var(--bg-color-dark-soft);
     color: var(--font-color-light);
-    margin-inline-start: auto;
     cursor: pointer;
+    margin-inline-start: auto;
 }
 
 .button:hover {
