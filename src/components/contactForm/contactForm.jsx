@@ -5,14 +5,36 @@ import HCaptcha from "@hcaptcha/react-hcaptcha"
 
 const ContactForm = () => {
 
-    //const [counter, setCounter] = useState(0); 
     const [name, setName] = useState(""); 
     const [disabled, setDisabled] = useState(false); 
     const [captchaValue, setCaptchaValue] = useState(null); 
 
-    const onHCaptchaChange = (token) => {
+    const onHCaptchaChange = (token, ekey) => {
         setCaptchaValue(token);
+        let captchaContainer = document.querySelector("#captcha-container");
+        const keyframes = [
+            { filter: "opacity(1)" },
+            { filter: "opacity(0)" }
+          ];
+        captchaContainer.animate(keyframes, {duration: 1000, iterations: 1})
+        setTimeout(() => {
+            captchaContainer.style.display = "none";
+        }, 1000)
     };
+
+    const handleExpire = () => {
+        setCaptchaValue(null);
+        let captchaContainer = document.querySelector("#captcha-container");
+        setTimeout(() => {
+            const keyframes = [
+                { filter: "opacity(0)", display: "block" },
+                { filter: "opacity(1)" }
+              ];
+            captchaContainer.animate(keyframes, {duration: 2000, iterations: 1})
+            captchaContainer.style.display = "block";
+        }, 2000)
+    };
+
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -26,7 +48,7 @@ const ContactForm = () => {
         const formData = new FormData(form);
         formData.append("h-captcha-response", captchaValue);
         const object = Object.fromEntries(formData);
-        delete object["g-recaptcha-response"];              //Automatically there
+        delete object["g-recaptcha-response"];              //Automatically there, but causes an error about using a pro feature?
         const jsonObject = JSON.stringify(object);
 
         const resultElement = document.getElementById('result');
@@ -45,9 +67,11 @@ const ContactForm = () => {
         if (result.success) {
             resultElement.innerHTML = "<div>Message sent successfully! I will get back to you soon!</div>";
             setDisabled(true);
+            let captchaContainer = document.querySelector("#captcha-container");
+            captchaContainer.style.display = "none";
         } else {
-            resultElement.innerHTML = "<div>Something went wrong!</div>";
-            console.log(json);
+            resultElement.innerHTML = "<div>Something went wrong... You can try again or email me directly!</div>";
+            console.log(result);
             setTimeout(() => {
                 resultElement.style.display = "none";
             }, 5000);
@@ -100,9 +124,9 @@ const ContactForm = () => {
             <span className={styles.disclaimer}>Your information will never be shared publicly. For more information, you can check the <a href="https://web3forms.com/" target="_blank">documentation for Web3forms.</a></span> 
             <div className={styles.button_container}>
                 <div className={styles.h_captcha}>
-                    <div>
+                    <div id="captcha-container">
                         <div className={styles.h_captcha_border}></div>
-                        <HCaptcha sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" onVerify={(e) => onHCaptchaChange(e)} theme="dark" />
+                        <HCaptcha id="h-captcha-component" sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" onVerify={(token, ekey) => onHCaptchaChange(token, ekey)} onExpire={() => handleExpire()} theme="dark" />
                     </div>
                 </div>
                 <button type="submit" id="submit" className={styles.button} disabled={disabled}>Send</button>
