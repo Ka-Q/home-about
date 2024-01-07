@@ -16,21 +16,21 @@ const HeroSection = () => {
                 </p>
                 <br/>
                 <p>
-                    I&apos;m currently studying computer science at the University of Eastern Finland and looking for commissions. Examples of my past projects and technical skills can be found just below.
+                    I&apos;m currently studying computer science at the University of Eastern Finland and looking opportunities in the field of Web Development. Examples of my past projects and technical skills can be found just below.
                 </p>
                 <br/>
                 <p>
-                    Check me out on: 
+                    If you&apos;re interested, you can <a href="#contact">contact me</a> or check me out on: 
                 </p>
                 <div className={styles.socials}>
                     <Link href="https://github.com/Ka-Q">
                         <button className={styles.social_button}>
-                            <Image src="/github_logo.png" alt="GitHub logo" fill sizes="8rem" className={styles.github}/>
+                            <Image src="/github_logo.png" alt="GitHub" fill sizes="8rem" className={styles.github}/>
                         </button>
                     </Link>
                     <Link href="https://linkedin.com/in/aku-laurila-045bb72a8">
                         <button className={styles.social_button}>
-                            <Image src="/linkedin_logo.png" alt="LinkedIn logo" fill sizes="8rem" className={styles.linkedin}/>
+                            <Image src="/linkedin_logo.png" alt="LinkedIn" fill sizes="8rem" className={styles.linkedin}/>
                         </button>
                     </Link>
                 </div>
