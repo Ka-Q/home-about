@@ -8,6 +8,10 @@
     overflow: hidden;
 }
 
+.desc a {
+    text-decoration: underline;
+}
+
 .animation_container {
     position: relative;
     width: 50%;

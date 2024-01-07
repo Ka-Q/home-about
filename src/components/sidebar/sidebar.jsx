@@ -8,7 +8,7 @@ const Sidebar = () => {
     const [open, setOpen] = useState(false);
     return (
         <div className={styles.container}>
-            <a className={styles.toggle} onClick={() => setOpen((prev) => !prev)}>≡</a>
+            <span className={styles.toggle} onClick={() => setOpen((prev) => !prev)}>≡</span>
             {open? 
                 <div className={styles.sidebar}>
                     <Navlinks />
