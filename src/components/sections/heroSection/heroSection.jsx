@@ -6,7 +6,7 @@ const HeroSection = () => {
     return (
         <div className={styles.hero}>
             <div className={styles.hero_image}>
-                <Image src="/wasp_in_amber.png" alt="a wasp in amber" fill/>
+                <Image src="/wasp_in_amber.png" alt="a wasp in amber" fill sizes="(max-width: 600px) 33vw, (max-width: 1200px) 33vw, 20vw" priority/>
             </div>
             <div className={styles.hero_section}>
                 <h1>👋 Hi! And welcome to my homepage!</h1>
@@ -25,11 +25,11 @@ const HeroSection = () => {
                 <div className={styles.socials}>
                     <Link href="https://github.com/Ka-Q">
                         <button className={styles.social_button}>
-                            <Image src="/github_logo.png" alt="GitHub logo" fill className={styles.github}/>
+                            <Image src="/github_logo.png" alt="GitHub logo" fill sizes="8rem" className={styles.github}/>
                         </button>
                     </Link>
                     <button className={styles.social_button}>
-                        <Image src="/linkedin_logo.png" alt="LinkedIn logo" fill className={styles.linkedin}/>
+                        <Image src="/linkedin_logo.png" alt="LinkedIn logo" fill sizes="8rem" className={styles.linkedin}/>
                     </button>
                 </div>
             </div>
