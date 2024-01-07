@@ -7,7 +7,7 @@ const ProjectCard = ({project}) => {
         <Link href={`/projects${project.path}`} className={styles.container}>
             <div className={styles.image_container}>
                 <div className={styles.hover_image}><span>→</span></div>
-                <Image src={project.image_path} alt="Project preview image" fill className={styles.image}/>
+                <Image src={project.image_path} alt="Project preview image" fill sizes="(max-width: 600px) 80vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw" className={styles.image}/>
             </div>
             <div className={styles.content}>
                 <h3 className={styles.title}>{project.name}</h3>

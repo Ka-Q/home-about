@@ -60,7 +60,7 @@ const TechnologiesMarquee = () => {
                 {images.map((n) => {
                     return (
                         <div className={styles.container + (n.inverted? ` ${styles.inverted}` : "")} key={n.path}>
-                            <Image src={n.path} alt={n.alt} objectFit={'contain'} layout={"fill"} sizes={"10vw"}/>
+                            <Image src={n.path} alt={n.alt} fill sizes={"10vw"} style={{objectFit: "contain"}}/>
                         </div>
                     )
                 })}
