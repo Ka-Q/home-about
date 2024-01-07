@@ -1,32 +1,13 @@
 .container {
+    position: relative;
     display: flex;
     flex-direction: column;
     max-width: 20rem;
     padding: 0;
     background: var(--bg-color-darker);
     border-radius: .5rem;
-    border: 1px solid var(--bg-color-mid-soft)
-}
-
-.container:hover {
-    animation: hoverAnimation .2s linear 0s;
-    animation-fill-mode: forwards;
-    cursor: pointer;
-    filter: grayscale(1);
-
-    .hover_image {
-        display: flex;
-    }
-}
-
-@keyframes hoverAnimation {
-    from {
-        transform: scale(1)
-      }
-    
-      to {
-        transform: scale(.98)
-      }
+    border: 1px solid var(--bg-color-mid-soft);
+    overflow: hidden;
 }
 
 .image_container {
@@ -35,23 +16,6 @@
     width: 100%;
     height: 15em;
     overflow: hidden;
-}
-
-.hover_image {
-    display: none;
-    position: relative;
-    height: inherit;
-    z-index: 100;
-    color: rgba(0,0,0,.8);
-    background: rgba(0,0,0,.3);;
-    text-align: center;
-    font-weight: bold;
-    font-size: 10rem;
-}
-
-.hover_image > span {
-    display: block;
-    margin: auto;
 }
 
 .image {
@@ -85,4 +49,88 @@
     background: rgba(0,0,0,.2);
     border: 2px solid var(--font-color-light-soft);
     border-radius: .5rem;
+}
+
+.container:hover {
+    animation: hoverAnimation .2s linear 0s;
+    animation-fill-mode: forwards;
+
+    .image_container, .content {
+        filter: blur(.1rem) brightness(.5);
+    }
+
+    .hover_content {
+        display: block;
+        pointer-events: all;
+    }
+}
+
+@keyframes hoverAnimation {
+    from {
+        transform: scale(1)
+      }
+    
+      to {
+        transform: scale(.98)
+      }
+}
+
+.hover_content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: .5rem;
+    padding-top: 2rem;
+    background: rgba(0,0,0,.75);
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.hover_content .tag_container {
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.hover_button_container {
+    text-align: center;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    gap: 1rem;
+    align-items: center;
+}
+
+.hover_button_container a {
+    display: contents;
+}
+
+.hover_button {
+    padding: 1rem;
+    width: 75%;
+    border: none;
+    border: 3px solid var(--bg-color-mid-soft);
+    border-radius: .5rem;
+    background: var(--bg-color-dark-soft);
+    color: var(--font-color-light);
+    cursor: pointer;
+}
+
+.hover_button:hover {
+    filter: brightness(1.2);
+}
+
+.live {
+    animation: blink 1s alternate ease-in-out infinite;
+}
+
+@keyframes blink {
+    from {
+        filter: opacity(1);
+    }
+
+    to {
+        filter: opacity(0);
+    }
 }
