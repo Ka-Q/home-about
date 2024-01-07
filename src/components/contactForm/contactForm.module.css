@@ -84,6 +84,7 @@
     flex-direction: row;
     align-items: center;
     justify-items: center;
+    min-height: 5.5rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -97,7 +98,7 @@
     display: block;
     color: var(--font-color-light-soft);
     font-size: .8rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .disclaimer > a {
