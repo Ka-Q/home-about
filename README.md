@@ -16,7 +16,7 @@ This is a [Next.js](https://nextjs.org/) project made to replace my old website.
   🌐   Custom domains about.akulaurila.com, akulaurila.com and their www-variants automatically redirected.
 
 
-## Tecnologies
+## Technologies
   - Next.js
   - React
   - Deployed on Vercel
