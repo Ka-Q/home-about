@@ -10,7 +10,7 @@ const ProjectCard = ({project}) => {
                 <Image src={project.image_path} alt="Project preview image" fill sizes="(max-width: 600px) 80vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw" className={styles.image}/>
             </div>
             <div className={styles.content}>
-                <h3 className={styles.title}>{project.name}</h3>
+                <h2 className={styles.title}>{project.name}</h2>
                 <p className={styles.desc}>{project.desc}</p>
                 <div className={styles.tag_container}>
                     {project.tags.map((tag)=> {
