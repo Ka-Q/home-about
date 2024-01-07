@@ -126,7 +126,7 @@ const ContactForm = () => {
                 <div className={styles.h_captcha}>
                     <div id="captcha-container">
                         <div className={styles.h_captcha_border}></div>
-                        <HCaptcha id="h-captcha-component" sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" onVerify={(token, ekey) => onHCaptchaChange(token, ekey)} onExpire={() => handleExpire()} theme="dark" />
+                        <HCaptcha id="h-captcha-component" sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" loadAsync onVerify={(token, ekey) => onHCaptchaChange(token, ekey)} onExpire={() => handleExpire()} theme="dark" />
                     </div>
                 </div>
                 <button type="submit" id="submit" className={styles.button} disabled={disabled}>Send</button>
