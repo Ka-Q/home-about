@@ -26,6 +26,11 @@
     width: 67%;
   }
 
+  .hero_section a {
+    color: var(--font-color-light-soft);
+    text-decoration: underline;
+  }
+
   .socials {
     text-align: center;
   }
