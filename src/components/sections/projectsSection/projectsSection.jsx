@@ -7,7 +7,7 @@ const ProjectsSection = () => {
         <div className={styles.projects_container} id="projects">
             <h1 className={styles.projects_title}>Some projects of mine</h1>
             <p className={styles.projects_desc}>
-                Select a card to go to a project&apos;s dedicated page.
+                Select a card to view relevant links.
             </p>
             <Projects />
             <div className={styles.more_projects_container}>
