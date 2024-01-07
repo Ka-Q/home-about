@@ -19,10 +19,6 @@ const links = [
         text: "Contact",
         path: "/#contact"
     },
-    {
-        text: "All projects",
-        path: "projects"
-    }
 ]
 
 const Navlinks = () => {

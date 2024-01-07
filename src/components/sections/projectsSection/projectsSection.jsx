@@ -11,7 +11,7 @@ const ProjectsSection = () => {
             </p>
             <Projects />
             <div className={styles.more_projects_container}>
-                <Link href={"/projects"} className={styles.more_projects}>More projects →</Link>
+                <Link href={"https://github.com/Ka-Q?tab=repositories"} className={styles.more_projects}>More projects →</Link>
             </div>
         </div>
     )
