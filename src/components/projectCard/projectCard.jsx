@@ -27,7 +27,7 @@ const ProjectCard = ({project}) => {
                 <div className={styles.hover_button_container}>
                     {project.sources.map((source) => {
                         return (
-                            <Link href={source.source}>
+                            <Link href={source.source} key={source.source}>
                                 <button className={styles.hover_button}>{`${source.name} source code`}</button>
                             </Link>
                         )
