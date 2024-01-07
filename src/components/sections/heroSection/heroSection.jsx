@@ -28,9 +28,11 @@ const HeroSection = () => {
                             <Image src="/github_logo.png" alt="GitHub logo" fill sizes="8rem" className={styles.github}/>
                         </button>
                     </Link>
-                    <button className={styles.social_button}>
-                        <Image src="/linkedin_logo.png" alt="LinkedIn logo" fill sizes="8rem" className={styles.linkedin}/>
-                    </button>
+                    <Link href="https://linkedin.com/in/aku-laurila-045bb72a8">
+                        <button className={styles.social_button}>
+                            <Image src="/linkedin_logo.png" alt="LinkedIn logo" fill sizes="8rem" className={styles.linkedin}/>
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
