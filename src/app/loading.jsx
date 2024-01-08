@@ -1,7 +1,6 @@
 import styles from "./loading.module.css";
 
 const LoadingPage = () => {
-    console.log("laoding...");
     return (
         <div className={styles.container}>
             <h1 className={styles.text}>Loading</h1>
