@@ -1,0 +1,67 @@
+.container {
+    position: relative;
+    text-align: center;
+    margin-top: 10rem;
+    margin-bottom: auto;
+}
+
+.text {
+    font-size: 1.2rem;
+}
+
+.loading_container {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.loading {
+    position: absolute;
+    margin: auto;
+    width: 5rem;
+    left: 50%;
+    transform: translate(calc(-50% - .5rem), 0rem);
+    background: red;
+}
+
+.dot1, .dot2, .dot3, .dot4, .dot5 {
+    position: absolute;
+    display: block;
+    width: 1rem;
+    bottom: .2rem;
+    animation: bounce 1s alternate 0s infinite;
+}
+
+.dot1 {
+    left: 0%;
+    animation-delay: 0s;
+}
+
+.dot2 {
+    left: 25%;
+    animation-delay: .25s;
+}
+
+.dot3 {
+    left: 50%;
+    animation-delay: .5s;
+}
+
+.dot4 {
+    left: 75%;
+    animation-delay: .75s;
+}
+
+.dot5 {
+    left: 100%;
+    animation-delay: 1s;
+}
+
+@keyframes bounce {
+    from {
+        transform: translate(0em, 0em);
+    }
+
+    to {
+        transform: translate(0em, .5em);
+    }
+}
