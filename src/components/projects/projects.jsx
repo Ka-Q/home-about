@@ -9,8 +9,8 @@ const projects = [
         image_path: "/DWS_wip.png",
         tags: ["Web", "React", "Express", "MySQL", "R2/S3"],
         sources: [
-            {name: "Front", source: ""},
-            {name: "API", source: ""}
+            {name: "Client", source: "https://github.com/Ka-Q/demo-webstore-front"},
+            {name: "API", source: "https://github.com/Ka-Q/demo-webstore-api"}
         ]
     },
     {
