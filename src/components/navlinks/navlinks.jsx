@@ -1,6 +1,6 @@
+"use client"
 import Link from "next/link"
 import styles from "./navlinks.module.css"
-import { usePathname } from "next/navigation"
 
 const links = [
     {
