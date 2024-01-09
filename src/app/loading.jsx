@@ -1,6 +1,6 @@
 import styles from "./loading.module.css";
 
-const LoadingPage = () => {
+const Loading = () => {
     return (
         <div className={styles.container}>
             <h1 className={styles.text}>Loading</h1>
@@ -17,4 +17,4 @@ const LoadingPage = () => {
     )
 }
 
-export default LoadingPage;
+export default Loading;
