@@ -22,6 +22,7 @@
     width: 100%;
     max-width: 40rem;
     padding: 1rem;
+    padding-top: 3rem;
     z-index: 1;
     text-align: center;
     margin: auto;
@@ -156,5 +157,8 @@
     }
     .animation_container {
         width: 100%;
+    }
+    .form_container {
+        padding-top: 1rem;
     }
 }

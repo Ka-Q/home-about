@@ -1,10 +1,10 @@
 .container {
     background: var(--bg-color-dark);
-    background: linear-gradient(350deg, var(--bg-color-dark-soft) 49.5%, black 49.8%, black 50.2%, var(--bg-color-darker) 50.5%);
+    background: linear-gradient(350deg, var(--bg-color-darker) 0%, var(--bg-color-dark-soft) 39.5%, var(--bg-color-mid-soft) 40%, var(--bg-color-darker) 40.5%, var(--bg-color-dark-soft) 54.5%, var(--bg-color-mid-soft) 55%, var(--bg-color-darker) 55.5%, var(--bg-color-dark) 100%);
     padding: 1rem;
     padding-bottom: 3rem;
-    border-top: 4px solid black;
-    border-bottom: 4px solid black;
+    border-top: .5rem solid var(--bg-color-dark);
+    border-bottom: .5rem  solid var(--bg-color-darker);
 }
 
 .content {
@@ -19,12 +19,14 @@
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
+    filter: drop-shadow(0 1rem 2.5rem black);
 }
 
 .title {
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
+    filter: drop-shadow(0 .3rem .2rem black);
 }
 
 .title > span {
