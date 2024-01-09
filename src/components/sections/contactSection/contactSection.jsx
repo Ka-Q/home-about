@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 
-//import ContactForm from "@/components/contactForm/contactForm";
 import styles from "./contactSection.module.css"
 import Image from "next/image";
 import Loading from "@/app/loading";
