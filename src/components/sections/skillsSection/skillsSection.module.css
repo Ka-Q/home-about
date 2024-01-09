@@ -19,14 +19,14 @@
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
-    filter: drop-shadow(0 1rem 2.5rem black);
+    filter: drop-shadow(0 1rem 2rem black);
 }
 
 .title {
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
-    filter: drop-shadow(0 .3rem .2rem black);
+    filter: drop-shadow(0 .3rem .3rem black);
 }
 
 .title > span {
