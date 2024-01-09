@@ -9,6 +9,7 @@ const ContactForm = () => {
 
     const [name, setName] = useState(""); 
     const [disabled, setDisabled] = useState(false); 
+    const [showCaptcha, setShowCaptcha] = useState(false); 
     const [captchaValue, setCaptchaValue] = useState(null); 
 
     const onHCaptchaChange = (token, ekey) => {
@@ -18,7 +19,7 @@ const ContactForm = () => {
             { filter: "opacity(1)" },
             { filter: "opacity(0)" }
           ];
-        captchaContainer.animate(keyframes, {duration: 1000, iterations: 1})
+        captchaContainer.animate(keyframes, {duration: 1000, iterations: 1, fill: "forwards"})
         setTimeout(() => {
             captchaContainer.style.display = "none";
         }, 1000)
@@ -30,7 +31,7 @@ const ContactForm = () => {
         setTimeout(() => {
             const keyframes = [
                 { filter: "opacity(0)", display: "block" },
-                { filter: "opacity(1)" }
+                { filter: "opacity(1)", display: "block" }
               ];
             captchaContainer.animate(keyframes, {duration: 2000, iterations: 1})
             captchaContainer.style.display = "block";
@@ -98,6 +99,7 @@ const ContactForm = () => {
                     className={styles.input} 
                     required
                     disabled={disabled}
+                    onChange={() => {!showCaptcha && setShowCaptcha(true)}}
                 />
                 <label htmlFor="name-input" className={styles.label}>name</label>
                 <input 
@@ -127,15 +129,17 @@ const ContactForm = () => {
             <div className={styles.button_container}>
                 <div className={styles.h_captcha}>
                     <div id="captcha-container">
-                        <div className={styles.h_captcha_border}></div>
-
-                        {<HCaptcha 
-                            id="h-captcha-component" 
-                            sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" 
-                            loadAsync onVerify={(token, ekey) => onHCaptchaChange(token, ekey)} 
-                            onExpire={() => handleExpire()} 
-                            theme="dark" 
-                        />}
+                        {showCaptcha &&
+                        <>
+                            <div className={styles.h_captcha_border}></div>
+                            <HCaptcha 
+                                id="h-captcha-component" 
+                                sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" 
+                                loadAsync onVerify={(token, ekey) => onHCaptchaChange(token, ekey)} 
+                                onExpire={() => handleExpire()} 
+                                theme="dark" 
+                            />
+                        </>}
                     </div>
                 </div>
                 <button type="submit" id="submit" className={styles.button} disabled={disabled}>Send</button>
