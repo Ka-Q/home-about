@@ -33,14 +33,16 @@ const SkillsSection = () => {
     return (
         <div className={styles.container} id="skills">
             <h1 className={styles.title}><span>Relevant skills</span> I have</h1>
-            <div className={styles.card_container}>
-            {
-                list.map((n) => {
-                    return (
-                        <SkillCard category={n} key={n.title}/>
-                    )
-                })
-            }
+            <div className={styles.content}>
+                <div className={styles.card_container}>
+                {
+                    list.map((n) => {
+                        return (
+                            <SkillCard category={n} key={n.title}/>
+                        )
+                    })
+                }
+                </div>
             </div>
         </div>
     )
