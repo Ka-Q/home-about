@@ -1,10 +1,11 @@
 import dynamic from "next/dynamic";
 
-import ContactForm from "@/components/contactForm/contactForm";
+//import ContactForm from "@/components/contactForm/contactForm";
 import styles from "./contactSection.module.css"
 import Image from "next/image";
+import Loading from "@/app/loading";
 
-//const ContactForm2 = dynamic(() => import('@/components/contactForm/contactForm'), { ssr: false })
+const ContactForm = dynamic(() => import('@/components/contactForm/contactForm'), { ssr: false, loading: () => <div style={{paddingBottom: "5rem"}}><Loading/></div> })
 
 const ContactSection = () => {
     return (
