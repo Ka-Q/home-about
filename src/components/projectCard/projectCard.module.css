@@ -52,6 +52,8 @@
 }
 
 .container:hover {
+    animation: hoverZoom .2s linear 0s;
+    animation-fill-mode: forwards;
 
     .image_container, .content {
         animation: hoverAnimation .2s linear 0.2s;
@@ -87,6 +89,16 @@
     
       to {
         filter: blur(.1rem) brightness(.5);
+      }
+}
+
+@keyframes hoverZoom {
+    from {
+        transform: scale(1);
+      }
+    
+      to {
+        transform: scale(1.02);
       }
 }
 
