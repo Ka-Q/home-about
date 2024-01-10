@@ -52,26 +52,41 @@
 }
 
 .container:hover {
-    animation: hoverAnimation .2s linear 0s;
-    animation-fill-mode: forwards;
 
     .image_container, .content {
-        filter: blur(.1rem) brightness(.5);
+        animation: hoverAnimation .2s linear 0.2s;
+        animation-fill-mode: forwards;
+        z-index: 0;
     }
 
     .hover_content {
         display: block;
+        pointer-events: none;
+        z-index: 2;
+        animation: fadein .3s linear 0s forwards;
+        filter: opacity(0)
+    }
+}
+
+@keyframes fadein {
+    from {
+        pointer-events: none;
+        filter: opacity(0);
+    }
+
+    to {
         pointer-events: all;
+        filter: opacity(1);
     }
 }
 
 @keyframes hoverAnimation {
     from {
-        transform: scale(1)
+        filter: blur(0) brightness(1);
       }
     
       to {
-        transform: scale(.98)
+        filter: blur(.1rem) brightness(.5);
       }
 }
 
@@ -115,6 +130,7 @@
     background: var(--bg-color-dark-soft);
     color: var(--font-color-light);
     cursor: pointer;
+    font-size: 1rem;
 }
 
 .hover_button:hover {
