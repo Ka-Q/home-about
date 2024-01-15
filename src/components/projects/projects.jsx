@@ -8,6 +8,7 @@ const projects = [
         path: "/dws",
         image_path: "/DWS_wip.png",
         tags: ["Web", "React", "Express", "MySQL", "R2/S3"],
+        live_demo: "https://dws.akulaurila.com/",
         sources: [
             {name: "Client", source: "https://github.com/Ka-Q/demo-webstore-front"},
             {name: "API", source: "https://github.com/Ka-Q/demo-webstore-api"}
