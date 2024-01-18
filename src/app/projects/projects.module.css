@@ -1,0 +1,71 @@
+.container {
+    height: 100%;
+}
+
+.title {
+    text-align: center;
+    margin: 3rem;
+}
+
+.filter_container {
+    background: var(--bg-color-mid);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border-top: 1rem solid var(--bg-color-dark-soft);
+    border-bottom: 1rem solid var(--bg-color-darker);
+}
+
+.input {
+    display: block;
+    line-height: 2rem;
+    border-radius: 1rem;
+    border: 2px solid var(--bg-color-dark-soft);
+    padding: .25rem;
+    padding-left: 1rem;
+    min-width: 50%;
+    max-width: 50%;
+    background: var(--bg-color-darker);
+    font-family: inherit;
+    color: var(--font-color-light);
+    caret-color: var(--font-color-light);
+}
+
+.button {
+    font-size: 1rem;
+    padding: .1rem;
+    border-radius: 2rem;
+    border: 3px solid var(--bg-color-mid-soft);
+    background-color: var(--bg-color-dark-soft);
+    color: var(--font-color-light);
+    cursor: pointer;
+    min-width: 10rem;
+    margin-inline-start: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    margin: 4rem;
+    margin-top: 2rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
