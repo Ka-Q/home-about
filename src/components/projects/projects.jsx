@@ -1,4 +1,4 @@
-import ProjectCard from "../projectCard/projectCard"
+import ProjectCard from "../featuredProjectCard/featuredProjectCard"
 import styles from "./projects.module.css"
 
 const projects = [
