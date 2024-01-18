@@ -1,5 +1,5 @@
 import Image from "next/image"
-import styles from "./projectCard.module.css"
+import styles from "./featuredProjectCard.module.css"
 import Link from "next/link"
 
 const ProjectCard = ({project}) => {
