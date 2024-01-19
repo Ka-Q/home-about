@@ -106,6 +106,7 @@
 }
 
 .button {
+    font-family: inherit;
     font-size: 1rem;
     min-width: 10rem;
     min-height: 4rem;
