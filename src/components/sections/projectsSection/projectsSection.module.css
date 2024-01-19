@@ -20,6 +20,7 @@
     margin-inline-start: auto;
     font-size: 1.5rem;
     font-weight: bold;
+    border-bottom: .15rem solid var(--font-color-light);
 }
 
 .more_projects:hover {
