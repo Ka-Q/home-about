@@ -2,6 +2,7 @@
 import ProjectCard from '@/components/projectCard/projectCard'
 import styles from './projects.module.css'
 import { useEffect, useState } from 'react';
+import Loading from '../loading';
 
 const ProjectsPage = () => {
 	const [allTags, setAllTags] = useState([]);
@@ -52,16 +53,24 @@ const ProjectsPage = () => {
 			<h1 className={styles.title}>Here's a list of my public projects</h1>
 			<div className={styles.filter_container}>
 				<h3 className={styles.filter_title}>Filter by tags</h3>
-				<p className={styles.filter_desc}>You can filter by selecting from the tags below</p>
+				<p className={styles.filter_desc}>You can filter the list by selecting from the tags below</p>
 				{allTags && allTags.map((n) => <button className={`${styles.tag_selector} ${filter.includes(n.id) && styles.selected}`} key={n.id} onClick={() => handleTagFilter(n.id)}>{n.name}</button>)}
 			</div>
-			<div className={styles.grid}>
-				{projects && projects.map((n) => {
-					return (
-						<ProjectCard project={n} key={n.name}/>
-					)
-				})}
-			</div>
+			<p className={styles.desc}>Select a project to view it's page, including relevant links and maybe even a blog post about it :)</p>
+			{projects.length == 0 ? 
+				<div style={{minHeight: "25rem"}}>
+					<Loading />
+				</div>
+				: 
+				<div className={styles.grid}>
+					{projects && projects.map((n) => {
+						return (
+							<ProjectCard project={n} key={n.name}/>
+						)
+					})}
+				</div>
+			}
+			
 		</div>
 	)
 }

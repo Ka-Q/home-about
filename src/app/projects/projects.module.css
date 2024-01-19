@@ -10,6 +10,7 @@
 .filter_container {
     background: var(--bg-color-mid);
     width: 100%;
+    min-height: 10rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -49,6 +50,10 @@
 .selected {
     color: var(--bg-color-mid);
     background: var(--font-color-light-soft);
+}
+
+.desc {
+    text-align: center;
 }
 
 .grid {
