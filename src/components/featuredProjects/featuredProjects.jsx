@@ -1,7 +1,8 @@
-import ProjectCard from "../featuredProjectCard/featuredProjectCard"
-import styles from "./projects.module.css"
+import { performRequest } from "@/lib/datocms"
+import FeaturedProjectCard from "../featuredProjectCard/featuredProjectCard"
+import styles from "./featuredProjects.module.css"
 
-const projects = [
+/*const projects = [
     {
         name: "Demo webstore (WIP)",
         desc: "A fullstack web application for a mock-up webstore. Stack includes React, Express, MySQL and Cloudflare R2 Buckets.",
@@ -26,7 +27,7 @@ const projects = [
         ]
     },
     {
-        name: "Android Book Appliction",
+        name: "Android Book Application",
         desc: "An application that tracks the user's reading habits, most read categories and hours read / day.",
         path: "/book-application",
         image_path: "/book_application.jpg",
@@ -46,18 +47,42 @@ const projects = [
             {name: "Page", source: "https://github.com/Ka-Q/old-homepage"}
         ]
     }
-]
+]*/
 
-const Projects = () => {
+const query = `
+	query {
+		allProjects (filter: {featured: {eq: true}}) {
+			id
+			name
+			slug
+			previewImage {
+				url
+			}
+			tags {
+				id
+				name
+			}
+			externalLinks {
+				linktype
+				url
+				text
+			}
+			description
+        }
+	}`;
+
+const {data: {allProjects}} = await performRequest({query: query});
+
+const FeaturedProjects = () => {
     return (
         <div className={styles.container}>
-            {projects.map((n) => {
+            {allProjects && allProjects.map((n) => {
                 return (
-                    <ProjectCard project={n} key={n.name}/>
+                    <FeaturedProjectCard project={n} key={n.name}/>
                 )
             })}
         </div>
     )
 }
 
-export default Projects;
+export default FeaturedProjects;
