@@ -77,9 +77,11 @@
 @keyframes hoverZoom {
     from {
         transform: scale(1);
+        filter: drop-shadow(0 0rem 0rem var(--bg-color-darker));
       }
     
       to {
         transform: scale(1.02);
+        filter: drop-shadow(0 .5rem .25rem rgb(8, 0, 17));
       }
 }
