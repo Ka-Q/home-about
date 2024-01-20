@@ -1,12 +1,10 @@
 "use server"
-import Loading from '@/app/loading';
 import styles from './project.module.css';
 import { performRequest } from "@/lib/datocms";
-import Image from 'next/image';
 import Article from '@/components/article/article';
 
-
 const ProjectPage = async ({params}) => {
+
     const slug = params.slug;
 
     const query = `{
