@@ -52,7 +52,7 @@ const ProjectPage = async ({params}) => {
                         </tr>
                         {project.externalLinks.map((el) => {
                             return (
-                                <tr>
+                                <tr key={el.url}>
                                     <td>{el.text}</td>
                                     <td><a href={el.url}>{el.url}</a></td>
                                     <td>{el.linktype}</td>
