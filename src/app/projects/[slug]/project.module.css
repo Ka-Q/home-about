@@ -1,6 +1,8 @@
 .container {
     display: block;
     background-color: var(--bg-color-mid);
+    padding-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 .summary_title {
