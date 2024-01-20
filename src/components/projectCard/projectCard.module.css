@@ -20,11 +20,10 @@
     right: 0;
     width: 100%;
     background: linear-gradient(90deg, var(--bg-color-mid-soft) 0%, rgb(212, 212, 212) 50%, var(--bg-color-mid-soft) 100%) !important;
-    z-index: 2;
+    z-index: 1;
 }
 
 .image_container {
-    border-radius: .5rem .5rem 0rem 0rem;
     position: relative;
     width: 100%;
     height: 15em;
