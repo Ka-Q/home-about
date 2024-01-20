@@ -58,6 +58,11 @@
     padding: 1rem;
 }
 
+.desc a {
+    color: var(--font-color-light-soft);
+    text-decoration: underline;
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;

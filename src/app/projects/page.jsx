@@ -50,13 +50,13 @@ const ProjectsPage = () => {
 	
 	return (
 		<div className={styles.container}>
-			<h1 className={styles.title}>Here&apos;s a list of my public projects</h1>
+			<h1 className={styles.title}>Here&apos;s a list of my relevant projects</h1>
 			<div className={styles.filter_container}>
 				<h3 className={styles.filter_title}>Filter by tags</h3>
 				<p className={styles.filter_desc}>You can filter the list by toggling the tags below</p>
 				{allTags && allTags.map((n) => <button className={`${styles.tag_selector} ${filter.includes(n.id) && styles.selected}`} key={n.id} onClick={() => handleTagFilter(n.id)}>{n.name}</button>)}
 			</div>
-			<p className={styles.desc}>Select a project to view its page, including relevant links and maybe even a blog post about it.</p>
+			<p className={styles.desc}>Select a project to view its page, including relevant links and maybe even a blog post about it. Some of my smaller projects are only available on my <a href='https://github.com/Ka-Q'>GitHub.</a></p>
 			{projects.length == 0 ? 
 				<div style={{minHeight: "25rem"}}>
 					<Loading />
