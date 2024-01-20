@@ -17,8 +17,12 @@
     margin-bottom: 1rem;
 }
 
-.article p, .article ul, .article ol, .article li {
-    margin-left: 4rem;
+.article ul, .article ol, .article li {
+    margin-left: 2rem;
+}
+
+.article li {
+    margin-bottom: 1rem;
 }
 
 .article blockquote::before {
