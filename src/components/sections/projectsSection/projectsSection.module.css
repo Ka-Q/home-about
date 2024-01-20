@@ -11,9 +11,23 @@
     padding-bottom: 1rem;
 }
 
-.more_projects_container {
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.more_projects_container, .github_container{
     display: flex;
     padding: 1rem;
+}
+
+.more_projects_container {
+    margin-inline-start: auto;
+}
+
+.github_container {
+    margin-inline-start: 3rem;
 }
 
 .more_projects {
@@ -21,6 +35,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     border-bottom: .15rem solid var(--font-color-light);
+    white-space: nowrap;
 }
 
 .more_projects:hover {

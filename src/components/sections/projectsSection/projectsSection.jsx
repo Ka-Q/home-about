@@ -10,8 +10,13 @@ const ProjectsSection = () => {
                 Here are some selected favourites. Tap/hover on a card to view some relevant links.
             </p>
             <FeaturedProjects />
-            <div className={styles.more_projects_container}>
-                <Link href={"https://github.com/Ka-Q?tab=repositories"} className={styles.more_projects}>More projects →</Link>
+            <div className={styles.links}>
+                <div className={styles.more_projects_container}>
+                    <Link href={"/projects"} className={styles.more_projects}>All projects →</Link>
+                </div>
+                <div className={styles.github_container}>
+                    <Link href={"https://github.com/Ka-Q?tab=repositories"} className={styles.more_projects}>View on GitHub →</Link>
+                </div>
             </div>
         </div>
     )
