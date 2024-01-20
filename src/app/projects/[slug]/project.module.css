@@ -1,0 +1,108 @@
+.container {
+    display: block;
+    background-color: var(--bg-color-mid);
+}
+
+.summary_title {
+    margin: 2rem;
+}
+
+.summary_title, .title {
+    text-align: center;
+}
+
+.title_container {
+    max-width: 50%;
+}
+
+.summary_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid var(--bg-color-mid-soft);
+    border-radius: .5rem;
+    background: var(--bg-color-dark);
+    padding: 1rem;
+    width: 80%;
+    margin: auto;
+}
+
+@media screen and (max-width: 1200px) {
+    .summary_container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 2rem;
+    }
+    .summary_container {
+        width: 98%;
+        flex-direction: column;
+    }
+    .title_container {
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+    .summary_container {
+        width: 100%;
+        padding: .5rem;
+        flex-direction: column;
+    }
+    .title_container {
+        min-width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .table td{
+        max-width: 6rem;
+    }
+}
+
+.desc {
+    padding: 1rem;;
+}
+
+.tag_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tag {
+    color: var(--font-color-light-soft);
+    margin: .25rem;
+    padding: .2rem .3rem .2rem .3rem;
+    background: rgba(0,0,0,.2);
+    border: 2px solid var(--font-color-light-soft);
+    border-radius: .5rem;
+}
+
+
+.table a {
+    color: var(--font-color-light-soft);
+    text-decoration: underline;
+}
+
+.table th {
+    padding: .5rem;
+    border-bottom: 2px solid var(--bg-color-mid-soft);
+}
+
+.table td {
+    padding: .5rem;
+    background: var(--bg-color-darker);
+    text-align: center;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
+    border-radius: .2rem;
+}
