@@ -23,20 +23,20 @@ const ProjectCard = ({project}) => {
                     {project.externalLinks.map((el) => {
                         if (el.linktype == 'source') {
                             return (
-                                <Link href={el.url} key={`${project.name}${el.name}`}>
+                                <Link href={el.url} key={`${project.name}${el.text}`}>
                                     <button className={styles.hover_button}>{el.text}</button>
                                 </Link>
                             )
                         }
                         else if (el.linktype == 'live') {
                             return (
-                                <Link href={el.url} key={`${project.name}${el.name}`}>
+                                <Link href={el.url} key={`${project.name}${el.text}`}>
                                     <button className={styles.hover_button}><span className={styles.live}>🔴</span> Live demo</button> 
                                 </Link>
                             )
                         }
                     })}
-                    <Link href={`/projects/${project.slug}`} key={`${project.slug}`}>
+                    <Link href={`/projects/${project.slug}`}>
                         <button className={styles.hover_button}>Project page</button> 
                     </Link>
                 </div>

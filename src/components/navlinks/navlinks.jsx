@@ -30,13 +30,14 @@ const links = [
 ]
 
 const Navlinks = () => {
-
     return (
         <div className={styles.container}>
         {links.map((n)=> {
-            return (
-                <>{n.path != "div"? <Link href={n.path} key={n.path}>{n.text}</Link> : <div className={styles.link_divider}></div>}</>
-            )
+            if (n.path != "div") { 
+                return (<Link href={n.path} key={n.path}>{n.text}</Link>)
+            } else { 
+                return (<div className={styles.link_divider} key={n.path}></div>)
+            }
         })}
         </div>
     )
