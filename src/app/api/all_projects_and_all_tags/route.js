@@ -31,7 +31,7 @@ export const GET = async () => {
     console.log(query);
 
     try {
-        const {data: {allProjects, allTags}} = await performRequest({ query: query});
+        const {data: {allProjects, allTags}} = await performRequest({ query: query, revalidate: 60 });
         return NextResponse.json({data: {allProjects, allTags}});
     } catch {
         return NextResponse.json({message: "error"});

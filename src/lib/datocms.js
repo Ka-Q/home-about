@@ -1,4 +1,4 @@
-export const performRequest = async ({ query, variables = {}, includeDrafts = false }) => {
+export const performRequest = async ({ query, variables = {}, includeDrafts = false, revalidate }) => {
     const response = await fetch("https://graphql.datocms.com/", {
       headers: {
         Authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
@@ -6,6 +6,7 @@ export const performRequest = async ({ query, variables = {}, includeDrafts = fa
       },
       method: "POST",
       body: JSON.stringify({ query, variables }),
+      next: { revalidate },
     });
     
     const responseBody = await response.json();
