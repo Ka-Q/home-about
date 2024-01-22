@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 export const GET = async () => {
     const query = `
 	query {
-		allProjects {
+		allProjects (orderBy: finishDate_DESC) {
 			id
 			name
 			slug
@@ -27,8 +27,6 @@ export const GET = async () => {
 			name
 		}
 	}`;
-
-    console.log(query);
 
     try {
         const {data: {allProjects, allTags}} = await performRequest({ query: query, revalidate: 60 });
