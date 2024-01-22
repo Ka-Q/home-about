@@ -2,6 +2,7 @@
 import styles from './project.module.css';
 import { performRequest } from "@/lib/datocms";
 import Article from '@/components/article/article';
+import { notFound } from 'next/navigation'
 
 const ProjectPage = async ({params}) => {
 
@@ -27,6 +28,10 @@ const ProjectPage = async ({params}) => {
 	}`;
 
     const {data: {project}} = await performRequest({query: query});
+
+    if (!project) {
+        notFound();
+    }
 
     return (
         <div className={styles.container}>
