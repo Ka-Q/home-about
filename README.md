@@ -23,6 +23,7 @@ This is a [Next.js](https://nextjs.org/) project made to replace my old website.
   - React
   - Deployed on Vercel
   - Contact-form built using Web3Forms
+  - Projects' and their content managed through DatoCMS using their GraphQL API
 
 ## Running locally
 
