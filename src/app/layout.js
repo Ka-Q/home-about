@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Aku Laurila | Home',
   description: 'My homepage, porfolio and contact information',
+  openGraph: {
+    images: ['/OpenGraphBanner.webp'],
+  }
 }
 
 export default function RootLayout({ children }) {
