@@ -2,7 +2,40 @@
 import styles from './project.module.css';
 import { performRequest } from "@/lib/datocms";
 import Article from '@/components/article/article';
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation';
+
+export async function generateMetadata({ params}, parent) {
+    // read route params
+    const slug = params.slug;
+   
+    // fetch data
+    const query = `{
+		project (filter: {slug: {eq: "${slug}"}}) {
+			name
+			previewImage {
+				url
+			}
+			tags {
+				name
+			}
+			externalLinks {
+				linktype
+				url
+				text
+			}
+			description
+            article
+		}
+	}`;
+
+    const {data: {project}} = await performRequest({query: query});
+   
+    return {
+      title: `Aku Laurila | ${project.name}`,
+      description: project.description,
+      robots: "noindex"
+    }
+  }
 
 const ProjectPage = async ({params}) => {
 
