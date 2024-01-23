@@ -9,7 +9,7 @@ export const metadata = {
   title: 'Aku Laurila | Home',
   description: 'My homepage, porfolio and contact information',
   openGraph: {
-    images: ['/OpenGraphBanner.jpg'],
+    images: ['./OpenGraphBanner.jpg'],
   }
 }
 
