@@ -8,10 +8,6 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Aku Laurila | Home',
   description: 'My homepage, porfolio and contact information',
-  metadataBase: new URL("https://about.akulaurila.com"),
-  openGraph: {
-    images: '/OpenGraphBanner.jpg'
-  }
 }
 
 export default function RootLayout({ children }) {
