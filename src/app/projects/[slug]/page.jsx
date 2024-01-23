@@ -33,7 +33,10 @@ export async function generateMetadata({ params}, parent) {
     return {
       title: `Aku Laurila | ${project.name}`,
       description: project.description,
-      robots: "noindex"
+      robots: "noindex",
+      openGraph: {
+        images: [project.previewImage.url],
+      }
     }
   }
 
