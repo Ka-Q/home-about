@@ -11,9 +11,11 @@ This is a [Next.js](https://nextjs.org/) project made to replace my old website.
   
   ✈   Custom CSS animations
   
-  ✉   A custom contact-form with hCaptcha bot prevention
+  📧   A custom contact-form with hCaptcha bot prevention
 
   🌐   Custom domains about.akulaurila.com, akulaurila.com and their www-variants automatically redirected.
+
+  💬   Headless CMS solution for projects and articles about them.
 
 
 ## Technologies
