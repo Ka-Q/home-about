@@ -6,8 +6,8 @@ import Footer from '@/components/footer/footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Aku Laurila',
-  description: 'My homepage',
+  title: 'Aku Laurila | Home',
+  description: 'My homepage, porfolio and contact information',
 }
 
 export default function RootLayout({ children }) {
