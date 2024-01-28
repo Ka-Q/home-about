@@ -5,19 +5,19 @@ import styles from "./navlinks.module.css"
 const links = [
     {
         text: "About",
-        path: "/#top"
+        path: "#top"
     },
     {
         text: "Featured projects",
-        path: "/#projects"
+        path: "#projects"
     },
     {
         text: "Skills",
-        path: "/#skills"
+        path: "#skills"
     },
     {
         text: "Contact",
-        path: "/#contact"
+        path: "#contact"
     },
     {
         text: "|",
