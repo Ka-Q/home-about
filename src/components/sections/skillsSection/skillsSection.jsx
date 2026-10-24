@@ -10,14 +10,14 @@ const SkillsSection = () => {
         },
         {
             title: "Back-end",
-            skills: ["NodeJS", "Express", "JavaScript", "Python", "Java", "SQL", "REST", "DNS records"]
+            skills: ["Node.js", "Express", "JavaScript", "Python", "Java", "SQL", "REST", "DNS records"]
         },
         {
             title: "Cloud/Hosting Providers",
             skills: ["AWS", "Azure", "Cloudflare", "Vercel", "Netlify"]
         },
         {
-            title: "Dev Ops",
+            title: "DevOps",
             skills: ["Agile", "Scrum", "CI/CD", "Git"]
         },
         {
@@ -26,7 +26,7 @@ const SkillsSection = () => {
         },
         {
             title: "Mobile",
-            skills: ["Android", "React native"]
+            skills: ["Android", "React Native"]
         }
     ]
 

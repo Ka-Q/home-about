@@ -12,11 +12,11 @@ const HeroSection = () => {
                 <h1>👋 Hi! And welcome to my homepage!</h1>
                 <br/>
                 <p>
-                    I am Aku Laurila, a backend minded software- and full-stack web-developer located in Kuopio, Finland. 
+                    I am Aku Laurila, a backend-minded software- and full-stack web-developer located in Kuopio, Finland. 
                 </p>
                 <br/>
                 <p>
-                    I&apos;m currently studying computer science at the University of Eastern Finland and looking opportunities in the field of Web Development. Examples of my past projects and technical skills can be found just below.
+                    I&apos;m currently studying computer science at the University of Eastern Finland and looking for opportunities in the field of web development. Examples of my past projects and technical skills can be found just below.
                 </p>
                 <br/>
                 <p>

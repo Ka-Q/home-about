@@ -40,4 +40,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - ~~A page showing projects as a list/grid~~
 - ~~A page for a specific project showing information about it. Maybe the README?~~
 
-Done. Implenmented using DatoCMS
+Done. Implemented using DatoCMS

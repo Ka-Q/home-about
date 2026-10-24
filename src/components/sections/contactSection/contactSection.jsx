@@ -17,7 +17,7 @@ const ContactSection = () => {
                 <h1 className={styles.title}>Contact me</h1>
                 <br/>
                 <p className={styles.desc}>
-                    Have an offer, or just want to chat? You can email me directly at <a href="mailto:contact.akulaurila.com">contact@akulaurila.com</a> or leave a message using this form.
+                    Have an offer, or just want to chat? You can email me directly at <a href="mailto:contact@akulaurila.com">contact@akulaurila.com</a> or leave a message using this form.
                 </p>
                 <div className={styles.form}>
                     <ContactForm />

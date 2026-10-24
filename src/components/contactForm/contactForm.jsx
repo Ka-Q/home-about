@@ -125,7 +125,7 @@ const ContactForm = () => {
                 />
                 <div id="result" className={styles.result}></div>
             </div>
-            <span className={styles.disclaimer}>Your information will never be shared publicly. For more information, you can check the <a href="https://web3forms.com/" target="_blank">documentation for Web3forms.</a></span> 
+            <span className={styles.disclaimer}>Your information will never be shared publicly. For more information, you can check the <a href="https://web3forms.com/" target="_blank">documentation for Web3Forms.</a></span> 
             <div className={styles.button_container}>
                 <div className={styles.h_captcha}>
                     <div id="captcha-container">
