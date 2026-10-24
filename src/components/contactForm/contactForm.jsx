@@ -125,7 +125,7 @@ const ContactForm = () => {
                 />
                 <div id="result" className={styles.result}></div>
             </div>
-            <span className={styles.disclaimer}>Your information will never be shared publicly. For more information, you can check the <a href="https://web3forms.com/" target="_blank">documentation for Web3Forms.</a></span> 
+            <span className={styles.disclaimer}>Your message is sent by email via <a href="https://web3forms.com/privacy" target="_blank" rel="noopener noreferrer">Web3Forms</a> and used only to reply to you. This form is protected by hCaptcha; its <a href="https://www.hcaptcha.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="https://www.hcaptcha.com/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a> apply.</span> 
             <div className={styles.button_container}>
                 <div className={styles.h_captcha}>
                     <div id="captcha-container">
