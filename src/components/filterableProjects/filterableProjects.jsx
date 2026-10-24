@@ -15,6 +15,7 @@ const FilterableProjects = () => {
 		const fetchProjectsAndTags = async () => {
 			const path = `/api/all_projects_and_all_tags`;
 			const f = await fetch(path);
+			if (!f.ok) return;
 			const {data: {allProjects, allTags}} = await f.json()
 			setAllProjects(allProjects);
 			setProjects(allProjects);

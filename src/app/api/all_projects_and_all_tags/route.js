@@ -32,7 +32,7 @@ export const GET = async () => {
         const {data: {allProjects, allTags}} = await performRequest({ query: query, revalidate: 60 });
         return NextResponse.json({data: {allProjects, allTags}});
     } catch {
-        return NextResponse.json({message: "error"});
+        return NextResponse.json({message: "error"}, {status: 500});
     }
     
 }

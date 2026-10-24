@@ -10,8 +10,8 @@ export async function generateMetadata(props, parent) {
     const slug = params.slug;
    
     // fetch data
-    const query = `{
-		project (filter: {slug: {eq: "${slug}"}}) {
+    const query = `query ($slug: String!) {
+		project (filter: {slug: {eq: $slug}}) {
 			name
 			previewImage {
 				url
@@ -29,7 +29,11 @@ export async function generateMetadata(props, parent) {
 		}
 	}`;
 
-    const {data: {project}} = await performRequest({query: query});
+    const {data: {project}} = await performRequest({query: query, variables: {slug}});
+
+    if (!project) {
+        notFound();
+    }
    
     return {
       title: `Aku Laurila | ${project.name}`,
@@ -46,8 +50,8 @@ const ProjectPage = async (props) => {
 
     const slug = params.slug;
 
-    const query = `{
-		project (filter: {slug: {eq: "${slug}"}}) {
+    const query = `query ($slug: String!) {
+		project (filter: {slug: {eq: $slug}}) {
 			name
 			previewImage {
 				url
@@ -65,7 +69,7 @@ const ProjectPage = async (props) => {
 		}
 	}`;
 
-    const {data: {project}} = await performRequest({query: query});
+    const {data: {project}} = await performRequest({query: query, variables: {slug}});
 
     if (!project) {
         notFound();
