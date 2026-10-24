@@ -6,19 +6,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
-    "@hcaptcha/react-hcaptcha": "^1.9.2",
-    "next": "14.0.4",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-fast-marquee": "^1.6.2",
+    "@hcaptcha/react-hcaptcha": "^2.2.0",
+    "next": "^16.4.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-fast-marquee": "^1.6.5",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1"
   },
   "devDependencies": {
-    "eslint": "^8",
-    "eslint-config-next": "14.0.4"
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.1"
+  },
+  "engines": {
+    "node": "24.x"
   }
 }

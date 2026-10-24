@@ -4,7 +4,8 @@ import { performRequest } from "@/lib/datocms";
 import Article from '@/components/article/article';
 import { notFound } from 'next/navigation';
 
-export async function generateMetadata({ params}, parent) {
+export async function generateMetadata(props, parent) {
+    const params = await props.params;
     // read route params
     const slug = params.slug;
    
@@ -40,7 +41,8 @@ export async function generateMetadata({ params}, parent) {
     }
   }
 
-const ProjectPage = async ({params}) => {
+const ProjectPage = async (props) => {
+    const params = await props.params;
 
     const slug = params.slug;
 
