@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <div className={styles.container}>
             <div className={styles.footer_column}>
-                © 2024 Aku Laurila
+                © 2024–2026 Aku Laurila
             </div>
             <div className={styles.footer_column}>
                 
